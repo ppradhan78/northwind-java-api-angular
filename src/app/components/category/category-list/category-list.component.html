@@ -1,0 +1,11 @@
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<ul *ngIf="categories.length > 0; else noData">
+  <li *ngFor="let category of categories">
+    {{ category.categoryID }} - {{ category.categoryName }} - {{ category.description }}
+  </li>
+</ul>
+
+<ng-template #noData>
+  <p>No categories found.</p>
+</ng-template>
